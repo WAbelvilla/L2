@@ -124,7 +124,7 @@ int main(int argc, char const *argv[])
         cout << "1 - Productos" << endl;
         cout << "2 - Ingreso de Inventario" << endl;
         cout << "3 - Salida de Inventario" << endl;
-        cout << "4 - Ajsute positivo de Inventario" << endl;
+        cout << "4 - Ajuste positivo de Inventario" << endl;
         cout << "5 - Ajuste negativo de Inventario" << endl;
         cout << "0 - Salir" << endl;
         cout << "Ingrese una opcion del menu: ";
