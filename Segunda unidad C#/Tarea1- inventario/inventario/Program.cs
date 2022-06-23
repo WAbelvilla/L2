@@ -164,7 +164,6 @@ namespace inventario
                     break;
                 }
 
-
                 if (opcion == "0")
                 {
                     break;
