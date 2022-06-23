@@ -23,7 +23,7 @@ namespace inventario
 
             for (int i = 0; i < 5; i++)
             {
-                Console.WriteLine(productos[i, 0] + " | " + productos[i, 1] + " | " + productos[i, 2]);
+                Console.WriteLine(productos[i, 0] + " | " + productos[i, 1] + " | " + productos[i, 2] + ".");
             }
             Console.ReadLine();
         }
@@ -40,7 +40,7 @@ namespace inventario
                     }
                     else
                     {
-                        productos[i,2] = (Int32.Parse(productos[i,2]) + cantidad).ToString();
+                        productos[i,2] = (Int32.Parse(productos[i,2]) - cantidad).ToString();
                     }
                 }
             }
@@ -58,12 +58,66 @@ namespace inventario
             Console.WriteLine( "**********************************");
             Console.Write("Ingrese el codigo del producto: ");
             codigo = Console.ReadLine();
-            Console.WriteLine("Ingrese la cantidad del producto: ");
+            Console.Write("Ingrese la cantidad del producto: ");
             cantidad = Console.ReadLine();
             
 
             movimientoInventario(codigo, Int32.Parse(cantidad), "+");
         }
+
+        static void salidaDeInventario() {
+        string codigo = "";
+        string cantidad = "";
+
+        Console.Clear();
+        Console.WriteLine();
+
+        Console.WriteLine("Salida de Productos del Inventario");
+        Console.WriteLine("**********************************");
+        Console.Write("Ingrese el codigo del producto: ");
+        codigo = Console.ReadLine();
+        Console.Write("Ingrese la cantidad del producto: ");
+        cantidad = Console.ReadLine();
+        
+
+        movimientoInventario(codigo,Int32.Parse(cantidad), "-");
+}
+
+        static void ajustePositivo(){
+        string codigo = "";
+        string cantidad = "";
+
+        Console.Clear();
+        Console.WriteLine();
+
+        Console.WriteLine("Ingreso de Productos al Inventario");  
+        Console.WriteLine( "**********************************");
+        Console.Write("Ingrese el codigo del producto: ");
+        codigo = Console.ReadLine();
+        Console.Write("Ingrese la cantidad del producto: ");
+        cantidad = Console.ReadLine();
+        
+
+        movimientoInventario(codigo, Int32.Parse(cantidad), "+");
+}
+
+        static void ajusteNegativo(){
+        string codigo = "";
+        string cantidad = "";
+
+        Console.Clear();
+        Console.WriteLine();
+
+        Console.WriteLine("Salida de Productos del Inventario");
+        Console.WriteLine("**********************************");
+        Console.Write("Ingrese el codigo del producto: ");
+        codigo = Console.ReadLine();
+        Console.Write("Ingrese la cantidad del producto: ");
+        cantidad = Console.ReadLine();
+        
+
+        movimientoInventario(codigo,Int32.Parse(cantidad), "-");
+}
 
 
         static void Main(string[] args)
@@ -79,8 +133,13 @@ namespace inventario
                 Console.WriteLine("1 - Productos");
                 Console.WriteLine("2 - Ingreso de inventario");
                 Console.WriteLine("3 - Salida de inventario");
+                Console.WriteLine("4 - Ajuste Positivo");
+                Console.WriteLine("5 - Ajuste Negativo");
                 Console.WriteLine("0 - Salir");
+                Console.WriteLine("");
+                Console.Write("Ingrese una opcion: ");
                 opcion = Console.ReadLine();
+                
                 
 
                 switch (opcion)
@@ -91,6 +150,15 @@ namespace inventario
 
                     case"2":
                         ingresoDeInventario();
+                        break;
+                    case"3":
+                        salidaDeInventario();
+                        break;
+                    case"4":
+                        ajustePositivo();
+                        break;
+                    case"5":
+                        ajusteNegativo();
                         break;
                     default:
                     break;
